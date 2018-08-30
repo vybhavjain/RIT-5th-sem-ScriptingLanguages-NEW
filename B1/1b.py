@@ -7,3 +7,4 @@ with open('myfile.txt','rb') as file:
             words[word]=1
 
 words=dict(sorted(words.items(),key=lambda x:x[1],reverse=True))
+print(words)
