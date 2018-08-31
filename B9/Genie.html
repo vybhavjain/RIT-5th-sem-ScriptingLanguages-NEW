@@ -20,7 +20,7 @@ width:25%
 
 <h1 class="center_text">Genie Sentiment Analysis</h1>
 
-<img src="https://vignette.wikia.nocookie.net/lotc-creature-index/images/8/8c/Genie.png/revision/latest/scale-to-width-down/220?cb=20150826214144" width=500 height=500 class="center">
+<img id="image" src="https://vignette.wikia.nocookie.net/lotc-creature-index/images/8/8c/Genie.png/revision/latest/scale-to-width-down/220?cb=20150826214144" width=500 height=500 class="center">
 <br>
 
 <div class="center">
@@ -46,6 +46,18 @@ http.onreadystatechange = function() {//Call a function when the state changes.
 			var res=http.responseText;
 			res=JSON.parse(res);
 			//alert(res.sentiment.type + " "+res.sentiment.score);
+			var image=document.getElementById("image");
+			if(res.sentiment.type=="negative")
+			{
+			
+			image.src="https://media.giphy.com/media/3ohrypGmT9bFovUzmM/giphy.gif";
+			
+			}else if (res.sentiment.type=="positive")
+			{
+			image.src="https://media.tenor.com/images/52f5b75df727ddeeb0501f02735a56f2/tenor.gif";			
+			}
+			
+			
 			document.getElementsByName("type")[0].innerHTML="Sentiment :"+res.sentiment.type;
 			document.getElementsByName("value")[0].innerHTML="Confidence : "+res.sentiment.score;
 
@@ -56,20 +68,6 @@ http.send(params);
 
 
 }
-
-
-
 </script>
-
-
-
-
-
-
-
 </body>
-
-
-
-
 </html>
