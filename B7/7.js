@@ -19,10 +19,6 @@ function validate(id)
 			document.getElementById(a_id).innerHTML="Marks must be between 1 and 100";
 	
 	}
-		
-		
-
-	
 }
 function get_results()
 {
@@ -49,9 +45,6 @@ function get_grade(marks)
 	else 
 		return "Fail"
 }
-
-
-
 </script>
 </body>
 </html>
